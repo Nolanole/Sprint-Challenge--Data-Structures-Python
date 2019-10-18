@@ -17,7 +17,7 @@ class RingBuffer:
     return [item for item in self.storage if item is not None]
 
 
-#### Method 2: Q and Stack:
+#### Method 2: DLL:
 from doubly_linked_list import DoublyLinkedList
 
 class RingBuffer:

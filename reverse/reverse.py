@@ -43,13 +43,26 @@ class LinkedList:
     return False
 
   def reverse_list(self):
+    #start at the head
     current = self.head
+    #if list is empty (no head) or has a head but no next (1 item), nothing to reverse so just return
     if current is None or current.get_next() is None:
       return
+
     else:
+      #first traverse to the next item in the list
       current = current.get_next()
+
+      #the head is going to be the new tail, so set its next attribute to None
       self.head.set_next(None)
+    
+    #whlie loop to traverse the list until the old tail has been reached  
     while current:
+      #assign the value of the current node to variable
       val = current.get_value()
+      
+      #update the current var (aka traverse to next item in list)- when tail reached, loop breaks:
       current = current.get_next()
+      
+      #add the value of current node to the head of the list
       self.add_to_head(val)
